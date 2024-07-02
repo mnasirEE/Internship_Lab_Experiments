@@ -50,6 +50,12 @@ int main() {
     // Part 3: Function Pointers
     printf("\nPart 3: Function Pointers\n");
     // TODO: Implement exercises 3.1, 3.2, and 3.3
+    
+    // Declaring Pointers Functions
+    // Pointer function for BubbleSort
+    void (*bubbleSortPtr)(int *, int) = &bubbleSort;
+    // pointer function for selectionSort
+    void (*selectionSortPtr)(int *, int) = &selectionSort;
 
     // size of array
     int n;
@@ -61,7 +67,8 @@ int main() {
         printf("%d ",arr[i]);
     }
     printf("\n");
-    bubbleSort(arr, n);
+    // calling Bubblesort Pointer Function
+    (*bubbleSortPtr)(arr, n);
     printf("Array after Sorting by Bubble Sort Algorithm: ");
     // printing array
     for(int i = 0; i<n; i++){
@@ -75,7 +82,8 @@ int main() {
     for(int i = 0; i<n; i++)
         printf("%d ",arr2[i]);
     printf("\n");
-    selectionSort(arr2, n);
+    // calling selectionSort Pointer Function
+    (*selectionSort)(arr2, n);
     printf("Array after Sorting by Selection Sort Algorithm: ");
     // printing array
     for(int i = 0; i<n; i++)
